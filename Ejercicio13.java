@@ -5,36 +5,47 @@
  */
 package ejercicio13;
 
+import java.awt.BorderLayout;
 import java.util.Scanner;
 
 /**
  *
- * @author alumno
+ * @author pc
  */
 public class Ejercicio13 {
+//15_Se ingresa un importe si supera los 100 pesos , se le suma
+     //un 23% , si es menor a 100 pesos , se le descuenta el 50%.
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    //se ingresa una edad y se informa si es mayor de edad .
-    //declaracion de variables
-    String datoaux;
-    Integer edad;
+    
+    String dato;
+    Double importe;
+    Double descuento;
+    Double total;
     Scanner Misc = new Scanner (System.in);
     
-    System.out.println("ingrese la edad ");
-    datoaux = Misc.next();
-    edad = Integer.parseInt(datoaux);
+        System.out.println("ingrese el importe");
+        dato = Misc.next();
+        importe = Double.parseDouble(dato);
         
-    if (edad>17) 
-    {System.out.println("es mayor ");
-           
+        if (importe>100)
+        { descuento=importe*23/100;
+        total=importe+descuento;
+        //se muestra el mensaje
+        System.out.println("El descuento es : "+descuento+" El total : " + total + " ");
+
+        }
+        if (importe<100)
+        { descuento=importe*50/100;
+        total = importe-descuento;
+        //se muestra el mensaje
+        System.out.println("El descuento es : "+descuento+" El total : "+total+"");
+
+        }
+                    
     }
-    else if (edad<17)
-     
-    {System.out.println("es menor ");
-    }
-    }
+    
 }
